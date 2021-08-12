@@ -62,7 +62,7 @@ pip install -r requirements.txt --user
 
 3. Install pytorch 1.0.0 with conda:
 ```
-conda install pytorch=1.0.0 cuda100 -c pytorch
+conda install pytorch=1.0.0 torchvision cuda100 -c pytorch
 ```
 Please change cuda version accordingly.
 
