@@ -60,9 +60,9 @@ conda activate uodb
 pip install -r requirements.txt --user
 ```
 
-3. Install pytorch0.4.0 with conda:
+3. Install pytorch 1.0.0 with conda:
 ```
-conda install pytorch=0.4.0 cuda80 cudatoolkit==8.0 -c pytorch
+conda install pytorch=1.0.0 cuda100 -c pytorch
 ```
 Please change cuda version accordingly.
 
@@ -70,7 +70,8 @@ Please change cuda version accordingly.
 
 ```
 cd lib
-sh make.sh
+python setup.py build develop
+python setup_tools.py build_ext --inplace
 ```
 As pointed out by [ruotianluo/pytorch-faster-rcnn](https://github.com/ruotianluo/pytorch-faster-rcnn), choose the right `-arch` in `make.sh` file, to compile the cuda code:
 
