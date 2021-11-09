@@ -20,3 +20,6 @@ redundant/
 
 # Ignore cache files
 __pycache__/
+
+# Ignore VS Code setting files
+settings.json

@@ -13,6 +13,7 @@ from __future__ import print_function
 __sets = {}
 from datasets.pascal_voc import pascal_voc
 from datasets.kitti_voc import kitti_voc
+from datasets.vtt_voc import vtt_voc
 from datasets.widerface_voc import widerface_voc
 from datasets.coco import coco
 from datasets.imagenet import imagenet
@@ -73,6 +74,11 @@ for split in ['train', 'val', 'trainval', 'test']:
   name = 'kittivoc_{}'.format(split)
   year='2007'
   __sets[name] = (lambda split=split, year=year: kitti_voc(split, year))
+
+for split in ['train', 'val']:
+  name = 'vttvoc_{}'.format(split)
+  year='2007'
+  __sets[name] = (lambda split=split, year=year: vtt_voc(split, year))
 
 for split in ['train', 'val', 'trainval', 'test']:
     name = 'widerface_{}'.format(split)

@@ -118,7 +118,7 @@ class imdb(object):
       boxes = self.roidb[i]['boxes'].copy()
       oldx1 = boxes[:, 0].copy()
       oldx2 = boxes[:, 2].copy()
-      if cfg.dataset == 'widerface' or cfg.dataset == 'dota' or cfg.dataset == 'deeplesion':
+      if cfg.dataset == 'widerface' or cfg.dataset == 'dota' or cfg.dataset == 'deeplesion' or cfg.dataset == 'VTT':
         boxes[:, 0] = widths[i] - oldx2
         boxes[:, 2] = widths[i] - oldx1
       else:

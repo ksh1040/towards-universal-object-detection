@@ -45,6 +45,25 @@ def get_datasets_info(dataset, use_dict = False, test=False):
         datasets_info['dataset'] = dataset
         if test:
             datasets_info['imdb_name'] = "voc_2007_test"
+    elif dataset == "VTT":
+        datasets_info['imdb_name'] = "vttvoc_train"
+        datasets_info['imdbval_name'] = "vttvoc_val"
+        datasets_info['set_cfgs'] = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
+        datasets_info['MAX_NUM_GT_BOXES'] = 20
+        datasets_info['RPN_BATCHSIZE'] = 256
+        datasets_info['BATCH_SIZE'] = 256
+        datasets_info['ANCHOR_SCALES'] = [0.75, 1, 1.5, 2, 3, 4, 6, 8, 12, 16, 24, 30]
+        datasets_info['ANCHOR_RATIOS'] = [0.5, 1, 2]
+        datasets_info['num_classes'] = 21
+        datasets_info['USE_FLIPPED'] = True 
+        datasets_info['RPN_POSITIVE_OVERLAP'] = 0.5
+        datasets_info['RPN_NMS_THRESH'] = 0.7
+        datasets_info['FG_THRESH'] = 0.5
+        datasets_info['SCALES'] =(600,)
+        datasets_info['SCALES_TEST'] =(600,)
+        datasets_info['dataset'] = dataset
+        if test:
+            datasets_info['imdb_name'] = "vttvoc_val"
     elif dataset == "coco":
         datasets_info['imdb_name'] = "coco_2014_valminusminival"
         datasets_info['SCALES'] =(800,)
